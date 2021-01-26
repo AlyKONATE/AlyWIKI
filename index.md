@@ -1,14 +1,24 @@
-## Welcome to GitHub Pages
+## BIENVENUE SUR MA PAGE WIKIDATA
 
-You can use the [editor on GitHub](https://github.com/AlyKONATE/AlyWIKI/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+### EXCERCICE 1
+```sparql
+Select DISTINCT ?peinture ?peintureLabel ?lieux ?lieuxLabel
+where { ?peinture wdt:P170 wd:Q296. ?peinture wdt:P195 ?lieux.
+SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en".}
+}
+```
+# EXCERCICE 2
+```sparql
+select DISTINCT ?peinture ?peintureLabel ?img 
+where {
+ ?peinture wdt:P170 wd:Q296.
+ ?peinture wdt:P18 ?img.
+SERVICE wikibase:label { #pour récuéprer les labels
+bd:serviceParam wikibase:language "fr,en"}
+}
+```
+file:///C:/Users/alyko/Documents/DA.html
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
 Syntax highlighted code block
 
 # Header 1
